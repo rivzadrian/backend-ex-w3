@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken")
 class UserControllers {
 
     static async registerUser (req, res, next) {
+        
         try {
             const { name, email, password, role } = req.body;
 
@@ -19,8 +20,9 @@ class UserControllers {
             if (exist) {
                 throw { status: 409, message: 'Email already registered' }
             }
-          
-            const hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS);
+            // console.log(password);
+            
+            const hashedPassword = await bcrypt.hash(password, +process.env.SALT_ROUNDS);
 
             const newUser = await User.create({
                 name,
@@ -71,7 +73,6 @@ class UserControllers {
                 raw: true ,
                 attributes: ['name', 'role'],
             })
-            
             res.status(200).json({ data: dataUsers })
         } catch (error) {
             res.status(500).json(error)

@@ -5,9 +5,9 @@ const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Coba Cobi',
+      title: 'Dokumentasii ashoooooyyyyyy',
       version: '1.0.0',
-      description: 'API documentation for Coba Cobi',
+      description: 'API documentation for Rivza code',
     },
     components: {
         securitySchemes: {
