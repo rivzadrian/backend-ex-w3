@@ -20,7 +20,7 @@ class UserControllers {
                 throw { status: 409, message: 'Email already registered' }
             }
           
-            const hashedPassword = await bcrypt.hash(password, 10);
+            const hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS);
 
             const newUser = await User.create({
                 name,
@@ -56,7 +56,7 @@ class UserControllers {
             if (!valid) throw { message: 'Invalid email or password' };
 
             const payload = { id: user.id, email: user.email };
-            const token = jwt.sign(payload, 'JWT_SECRET');
+            const token = jwt.sign(payload, process.env.JWT_SECRET);
 
             res.status(200).json({ accessToken: token });
 
