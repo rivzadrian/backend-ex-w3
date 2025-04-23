@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745333440411" clover="3.2.0">
-  <project timestamp="1745333440411" name="All files">
-    <metrics statements="68" coveredstatements="63" conditionals="20" coveredconditionals="17" methods="12" coveredmethods="11" elements="100" coveredelements="91" complexity="0" loc="68" ncloc="68" packages="2" files="6" classes="6"/>
+<coverage generated="1745378072395" clover="3.2.0">
+  <project timestamp="1745378072395" name="All files">
+    <metrics statements="68" coveredstatements="67" conditionals="20" coveredconditionals="17" methods="12" coveredmethods="12" elements="100" coveredelements="96" complexity="0" loc="68" ncloc="68" packages="2" files="6" classes="6"/>
     <package name="controllers">
-      <metrics statements="31" coveredstatements="27" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="2"/>
+      <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
       <file name="ProductControllers.js" path="/Users/rvzadrian/Documents/BNI Bootcamp/W3/backend-ex-w3/controllers/ProductControllers.js">
-        <metrics statements="16" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
+        <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="19" count="3" type="stmt"/>
         <line num="20" count="3" type="stmt"/>
         <line num="23" count="3" type="cond" truecount="4" falsecount="0"/>

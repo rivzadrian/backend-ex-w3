@@ -51,3 +51,46 @@ describe('ProductControllers.addProduct', () => {
     });
   });
 });
+
+describe('ProductControllers.getAllProduct', () => {
+  let req, res;
+
+  beforeEach(() => {
+    req = {};
+    res = {
+      status: jest.fn().mockReturnThis(),
+      json: jest.fn()
+    };
+  });
+
+  it('should return 200 and list of products', async () => {
+    const mockProducts = [
+      { name: 'iPhone 14', price: 999 },
+      { name: 'MacBook Pro', price: 2499 }
+    ];
+
+    Product.findAll.mockResolvedValue(mockProducts);
+
+    await ProductControllers.getAllProduct(req, res);
+
+    expect(Product.findAll).toHaveBeenCalledWith({
+      raw: true,
+      attributes: ['name', 'price']
+    });
+
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({ data: mockProducts });
+  });
+
+  it('should return 500 on error', async () => {
+    Product.findAll.mockRejectedValue(new Error('Database error'));
+
+    await ProductControllers.getAllProduct(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.json).toHaveBeenCalledWith(expect.any(Error));
+  });
+});
+
+  
+  
